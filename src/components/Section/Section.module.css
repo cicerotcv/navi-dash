@@ -1,0 +1,11 @@
+.wrapper {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 5px 15px #20202020;
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

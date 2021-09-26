@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 interface IData {
@@ -9,7 +9,7 @@ interface IData {
 
 export function Home() {
   const [data, setData] = useState<IData>({});
-  const { createAccount } = useAuth();
+  const { user, createAccount } = useAuth();
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target) {
@@ -22,6 +22,10 @@ export function Home() {
     if (!!data.companyName && !!data.email) {
       createAccount(data.companyName, data.email);
     }
+  }
+
+  if (user.isSignedIn) {
+    return <Redirect to="/dashboard" />;
   }
 
   return (

@@ -40,12 +40,13 @@ export function AuthProvider({ children }: IAuthProviderProps) {
   }, []);
 
   const createAccount = (companyName: string, email: string) => {
-    setItem('auth', { companyName, email });
+    setItem('auth', { companyName, email, isSignedIn: true });
     setUser({ companyName, email, isSignedIn: true });
   };
 
   const clearUserData = () => {
     clearItems();
+    setUser({});
   };
 
   if (loading) {
