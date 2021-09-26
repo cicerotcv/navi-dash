@@ -1,0 +1,254 @@
+[
+  {
+    "id": "d15345",
+    "sector": "All other food manufacturing"
+  },
+  {
+    "id": "200f07",
+    "sector": "All other miscellaneous electrical equipment and component manufacturing"
+  },
+  {
+    "id": "1b17a4",
+    "sector": "Architectural, engineering, and related services"
+  },
+  {
+    "id": "529aed",
+    "sector": "Crude Petroleum and Natural Gas Extraction"
+  },
+  {
+    "id": "80352f",
+    "sector": "Breweries"
+  },
+  {
+    "id": "e83efe",
+    "sector": "Coal Power Generation"
+  },
+  {
+    "id": "b36849",
+    "sector": "Natural Gas Power Generation"
+  },
+  {
+    "id": "9b4c68",
+    "sector": "Cookie, cracker, and pasta manufacturing"
+  },
+  {
+    "id": "b37751",
+    "sector": "Data processing, hosting, and related services"
+  },
+  {
+    "id": "1ec619",
+    "sector": "Electric Bulk Power Transmission and Control"
+  },
+  {
+    "id": "b7dac4",
+    "sector": "Electric Power Distribution"
+  },
+  {
+    "id": "4dc7a9",
+    "sector": "Electronics and Appliance Stores"
+  },
+  {
+    "id": "38f95a",
+    "sector": "Ferrous metal foundries"
+  },
+  {
+    "id": "810986",
+    "sector": "General Merchandise Stores"
+  },
+  {
+    "id": "b36d34",
+    "sector": "Food, Beverage, Health, and Personal Care Stores"
+  },
+  {
+    "id": "e839a5",
+    "sector": "Hydroelectric Power Generation"
+  },
+  {
+    "id": "b881b3",
+    "sector": "Insurance agencies, brokerages, and related activities"
+  },
+  {
+    "id": "4cf2ea",
+    "sector": "Insurance carriers"
+  },
+  {
+    "id": "5db38",
+    "sector": "Iron and steel mills and ferroalloy manufacturing"
+  },
+  {
+    "id": "4cf866",
+    "sector": "Iron ore mining"
+  },
+  {
+    "id": "4d1093",
+    "sector": "Management of companies and enterprises"
+  },
+  {
+    "id": "4cf885",
+    "sector": "Securities, commodity contracts, investments, and related activities"
+  },
+  {
+    "id": "696ca2",
+    "sector": "Light truck and utility vehicle manufacturing"
+  },
+  {
+    "id": "eb1264",
+    "sector": "Medical and diagnostic labs and outpatient and other ambulatory care services"
+  },
+  {
+    "id": "d2091e",
+    "sector": "Miscellaneous Store Retailers"
+  },
+  {
+    "id": "4e4fef",
+    "sector": "Monetary authorities and depository credit intermediation"
+  },
+  {
+    "id": "6744ac",
+    "sector": "Nondepository credit intermediation and related activities"
+  },
+  {
+    "id": "362a7a",
+    "sector": "Nonstore Retailers"
+  },
+  {
+    "id": "9e209f",
+    "sector": "Other cut and sew apparel manufacturing"
+  },
+  {
+    "id": "30217",
+    "sector": "Clothing and Clothing Accessories Stores"
+  },
+  {
+    "id": "696d0f",
+    "sector": "Paperboard Mills"
+  },
+  {
+    "id": "ea61e9",
+    "sector": "Pulp mills"
+  },
+  {
+    "id": "e9b021",
+    "sector": "Petroleum refineries"
+  },
+  {
+    "id": "378d6e",
+    "sector": "Petroleum, Chemical, and Allied Products Wholesalers"
+  },
+  {
+    "id": "b7bbb5",
+    "sector": "Plastics material and resin manufacturing"
+  },
+  {
+    "id": "4e5592",
+    "sector": "Real estate"
+  },
+  {
+    "id": "4fc57",
+    "sector": "Residential permanent site single- and multi-family structures"
+  },
+  {
+    "id": "80f0a5",
+    "sector": "Software publishers"
+  },
+  {
+    "id": "5350c2",
+    "sector": "Support activities for transportation"
+  },
+  {
+    "id": "eb02c1",
+    "sector": "Telecommunications"
+  },
+  {
+    "id": "b9e411",
+    "sector": "Toilet preparation manufacturing"
+  },
+  {
+    "id": "4d998a",
+    "sector": "Water, sewage and other systems"
+  },
+  {
+    "id": "b59941",
+    "sector": "Sugar cane mills and refining"
+  },
+  {
+    "id": "a05269",
+    "sector": "All other basic inorganic chemical manufacturing"
+  },
+  {
+    "id": "340794",
+    "sector": "Air transportation"
+  },
+  {
+    "id": "6c5f36",
+    "sector": "Animal (except poultry) slaughtering, rendering, and processing"
+  },
+  {
+    "id": "85fbbc",
+    "sector": "Commercial and industrial machinery and equipment rental and leasing"
+  },
+  {
+    "id": "e83e04",
+    "sector": "Cotton farming"
+  },
+  {
+    "id": "ebbf12",
+    "sector": "Printing"
+  },
+  {
+    "id": "825c28",
+    "sector": "Food services and drinking places"
+  },
+  {
+    "id": "e8205c",
+    "sector": "Footwear manufacturing"
+  },
+  {
+    "id": "51e461",
+    "sector": "Motor vehicle parts manufacturing"
+  },
+  {
+    "id": "b59f21",
+    "sector": "Junior colleges, colleges, universities, and professional schools"
+  },
+  {
+    "id": "99d555",
+    "sector": "Miscellaneous Nondurable Goods Wholesalers"
+  },
+  {
+    "id": "52a9f8",
+    "sector": "Nonresidential commercial and health care structures"
+  },
+  {
+    "id": "1d3166",
+    "sector": "Sugarcane and sugar beet farming"
+  },
+  {
+    "id": "9f8758",
+    "sector": "Grain farming"
+  },
+  {
+    "id": "83b446",
+    "sector": "Gasoline Stations"
+  },
+  {
+    "id": "b36796",
+    "sector": "Hospitals"
+  },
+  {
+    "id": "ebd27c",
+    "sector": "Rail transportation (Diesel)"
+  },
+  {
+    "id": "e98c95",
+    "sector": "Automotive equipment rental and leasing"
+  },
+  {
+    "id": "384874",
+    "sector": "Motor Vehicle and Parts Dealers"
+  },
+  {
+    "id": "a057c0",
+    "sector": "Water transportation"
+  }
+]

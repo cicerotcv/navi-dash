@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { Button } from '../../components/Button';
+import { Container } from '../../components/Container';
+import { Section } from '../../components/Section';
 import { useAuth } from '../../hooks/useAuth';
 
 interface IData {
@@ -8,7 +11,10 @@ interface IData {
 }
 
 export function Home() {
-  const [data, setData] = useState<IData>({});
+  const [data, setData] = useState<IData>({
+    companyName: 'Empresa teste',
+    email: 'teste@email.com'
+  });
   const { user, createAccount } = useAuth();
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -29,14 +35,27 @@ export function Home() {
   }
 
   return (
-    <main>
-      <h1>HOME</h1>
-      <input type="text" name="companyName" onChange={handleChange} />
-      <br />
-      <input type="text" name="email" onChange={handleChange} />
-      <br />
-      <button onClick={handleSubmit}>Submit</button>
-      <Link to="/dashboard">dashboard</Link>
-    </main>
+    <Container>
+      <Section>
+        <input
+          type="text"
+          name="companyName"
+          placeholder="Company Name"
+          onChange={handleChange}
+          defaultValue={data.companyName}
+        />
+        <br />
+        <input
+          type="text"
+          name="email"
+          placeholder="email@company.com"
+          onChange={handleChange}
+          defaultValue={data.email}
+        />
+        <br />
+        <Button onClick={handleSubmit}>Submit</Button>
+        <Link to="/dashboard">dashboard</Link>
+      </Section>
+    </Container>
   );
 }

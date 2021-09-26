@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 export function useLocalStorage(suffix = '@navi') {
-  const setItem = useCallback((name: string, data: Record<string, any>) => {
+  const setItem = useCallback((name: string, data: object) => {
     localStorage.setItem(`${name}${suffix}`, JSON.stringify(data));
   }, []);
 

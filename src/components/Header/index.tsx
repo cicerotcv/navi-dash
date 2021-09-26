@@ -9,7 +9,7 @@ export function Header() {
       <div>logo</div>
       {user.companyName && <h3>{user.companyName}</h3>}
       <div>
-        <Button onClick={clearUserData}>logout</Button>
+        {user.isSignedIn && <Button onClick={clearUserData}>logout</Button>}
       </div>
     </header>
   );

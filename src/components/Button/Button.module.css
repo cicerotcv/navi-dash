@@ -1,8 +1,17 @@
 .button {
-  background-color: #9090ff;
+  background-color: #3457f0;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: transparent;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  opacity: 0.9;
 }

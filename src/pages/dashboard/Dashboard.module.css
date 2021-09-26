@@ -1,0 +1,14 @@
+.horizontalGroup {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.horizontalGroup > section {
+  flex: 1;
+  margin: 0;
+}
+
+.horizontalGroup > section:last-child {
+  margin-left: 1rem;
+}
