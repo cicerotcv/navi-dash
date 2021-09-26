@@ -3,12 +3,14 @@ import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
 import sectors from '../../data/sectors.json';
 import sectors_cost from '../../data/score_cost.json';
+import financial from '../../data/financial.json';
 import petrol_scores from '../../data/petrol_scatter.json';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import styles from './Dashboard.module.css';
 import { BarChart } from '../../components/Charts/Bars';
 import { ScatterChart } from '../../components/Charts/Scatter';
+import { LinesChart } from '../../components/Charts/Lines';
 
 interface ISector {
   id: string;
@@ -25,12 +27,6 @@ export function Dashboard() {
       setSector(storedSector);
     }
   }, []);
-
-  // function handleSelection(e: React.ChangeEvent<HTMLSelectElement>) {
-  //   const selectedSector = sectors.find((item) => item.id === e.target.value);
-  //   setSector(selectedSector);
-  //   setItem('sector', selectedSector!);
-  // }
 
   const cost = useMemo(() => {
     return sectors_cost.map((item) => ({
@@ -139,7 +135,7 @@ export function Dashboard() {
           </p>
         </Section>
       </div>
-      <div className={styles.horizontalGroup}>
+      {/* <div className={styles.horizontalGroup}>
         <Section>
           <h2>Scatter</h2>
           <ScatterChart
@@ -150,6 +146,37 @@ export function Dashboard() {
             xLabel="Score (E)"
             yLabel="Score (ESG)"
             keyZ="sector"
+          />
+        </Section>
+        <Section>
+          <h2>Descrição</h2>
+          <p>Descrição do gráfico score/sector.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint
+            dolore, consequuntur magni architecto excepturi illo sapiente
+            laudantium aliquid modi laboriosam fugit, id qui quis neque! Tempore
+            iusto voluptatum exercitationem corrupti!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint
+            dolore, consequuntur magni architecto excepturi illo sapiente
+            laudantium aliquid modi laboriosam fugit, id qui quis neque! Tempore
+            iusto voluptatum exercitationem corrupti!
+          </p>
+        </Section>
+      </div> */}
+      <div className={styles.horizontalGroup}>
+        <Section>
+          <h2>Scatter</h2>
+          <LinesChart
+            data={financial}
+            nameA="B3"
+            nameB="PL Total"
+            lineA="b3"
+            lineB="pl_total"
+            keyX="date"
+            xLabel="Data"
+            yLabel="???"
           />
         </Section>
         <Section>

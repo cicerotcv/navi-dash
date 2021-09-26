@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import {
   ScatterChart as ScatterRecharts,
-  Bar,
   Tooltip,
   CartesianGrid,
   Label,
@@ -31,8 +30,6 @@ interface IScatterProps {
 
 function UnmemoizedScatter({
   data,
-  width = 600,
-  height = 300,
   unitX,
   unitY,
   xLabel,
@@ -45,7 +42,7 @@ function UnmemoizedScatter({
   data = data.sort((a, b) => (a[keyX] > b[keyX] ? 1 : -1));
   return (
     <ResponsiveContainer height={300}>
-      <ScatterRecharts>
+      <ScatterRecharts height={300}>
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis
           dataKey={keyX}
@@ -60,7 +57,7 @@ function UnmemoizedScatter({
             {yLabel}
           </Label>
         </YAxis>
-        {keyZ && <ZAxis dataKey={keyZ} range={[5,10]}/>}
+        {keyZ && <ZAxis dataKey={keyZ} range={[5, 10]} />}
         <Legend
           width={200}
           wrapperStyle={{
