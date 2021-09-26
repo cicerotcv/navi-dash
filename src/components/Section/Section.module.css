@@ -10,7 +10,7 @@
   align-items: flex-start;
 }
 
-.wrapper > *:first-child {
+.wrapper > h2:first-child {
   margin-bottom: 1rem;
 }
 

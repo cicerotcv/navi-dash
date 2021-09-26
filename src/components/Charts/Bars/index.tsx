@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import {
   BarChart as RechartsBarChart,
   Bar,
@@ -31,15 +31,22 @@ function UnmemoizedBars({
   keyX,
   keyY
 }: IBarChartsProps) {
-  data = data.sort((a, b) => (a.sector > b.sector ? 1 : -1));
+  const orderedData = useMemo(() => {
+    return data.sort((a, b) => (a.sector > b.sector ? 1 : -1));
+  }, [data]);
   return (
     <ResponsiveContainer height={300}>
-      <RechartsBarChart data={data} barGap={1} margin={{ bottom: 15 }}>
+      <RechartsBarChart data={orderedData} barGap={1} margin={{ bottom: 15 }}>
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-        <XAxis dataKey={keyX} type="category">
+        <XAxis dataKey={keyX} type="category" padding={{ left: 10, right: 10 }}>
           <Label dy={15}>{xLabel}</Label>
         </XAxis>
-        <YAxis dataKey={keyY} unit={unit} tick={CustomAxisTick} tickMargin={1}>
+        <YAxis
+          dataKey={keyY}
+          unit={unit}
+          tick={CustomAxisTick}
+          tickMargin={1}
+          padding={{ top: 10, bottom: 10 }}>
           <Label angle={-90} dx={-15}>
             {yLabel}
           </Label>

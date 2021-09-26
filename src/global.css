@@ -1,3 +1,7 @@
+:root {
+  --default-blue: #8884d8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +10,7 @@
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: #fff;
   min-height: 100vh;
   flex-direction: column;
   display: flex;

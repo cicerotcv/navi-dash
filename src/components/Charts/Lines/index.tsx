@@ -42,29 +42,29 @@ function UnmemoizedLines({
 }: ILinesProps) {
   // data = data.sort((a, b) => (a[keyX] > b[keyX] ? 1 : -1));
 
-  const [dataMin, dataMax, ticks] = useMemo(() => {
+  const [dataMin, dataMax] = useMemo(() => {
     const values: number[] = data.map((item) => item[lineB] as number);
     const [min, max] = [Math.min(...values), Math.max(...values)];
-    const tcks = range(0.8 * min, 1.2 * max, 10).map(
-      (tick) => Math.round(tick * 100) / 100
-    );
-    console.log(tcks);
-    return [min, max, tcks];
+    return [Math.round(100 * min) / 100, Math.round(100 * max) / 100];
   }, [data]);
 
-  console.log(String());
+  console.log(dataMin, dataMax);
   return (
     <ResponsiveContainer height={300}>
-      <LineRecharts data={data} height={300}>
+      <LineRecharts data={data} height={300} margin={{ bottom: 25 }}>
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-        <XAxis dataKey={keyX} minTickGap={10} tickSize={10}>
+        <XAxis
+          dataKey={keyX}
+          minTickGap={10}
+          tickSize={10}
+          padding={{ left: 10, right: 10 }}>
           <Label dy={20}>{xLabel}</Label>
         </XAxis>
         <YAxis
+          padding={{ top: 10, bottom: 10 }}
           dataKey={lineB}
           unit={unitY}
-          domain={[0.8 * dataMin, 1.2 * dataMax]}
-          ticks={ticks}
+          domain={[dataMin, dataMax + 0.01]}
           type="number">
           <Label angle={-90} dx={-20}>
             {yLabel}

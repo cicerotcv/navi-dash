@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 2rem);
+  width: calc(100vw - 10rem);
   max-width: 1440px;
   align-self: center;
 }

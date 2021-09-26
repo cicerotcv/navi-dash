@@ -1,9 +1,19 @@
 .wrapper {
   display: flex;
   height: 3rem;
-  background-color: #eee;
+  background-color: #fff;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   box-shadow: 0 5px 15px #20202020;
+}
+.logo {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  letter-spacing: 10px;
+  text-align: justify;
+  text-transform: uppercase;
+  font-style: italic;
+  cursor: default;
+  user-select: none;
 }

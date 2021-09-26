@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import {
   ScatterChart as ScatterRecharts,
   Tooltip,
@@ -39,7 +39,9 @@ function UnmemoizedScatter({
   keyY,
   keyZ
 }: IScatterProps) {
-  data = data.sort((a, b) => (a[keyX] > b[keyX] ? 1 : -1));
+  const orderedData = useMemo(() => {
+    return data.sort((a, b) => (a[keyX] > b[keyX] ? 1 : -1));
+  }, []);
   return (
     <ResponsiveContainer height={300}>
       <ScatterRecharts height={300}>
@@ -49,10 +51,11 @@ function UnmemoizedScatter({
           minTickGap={10}
           tickSize={10}
           unit={unitX}
+          padding={{ left: 10, right: 10 }}
           tickFormatter={(value) => String(Math.round(value))}>
           <Label dy={20}>{xLabel}</Label>
         </XAxis>
-        <YAxis dataKey={keyY} unit={unitY}>
+        <YAxis dataKey={keyY} unit={unitY} padding={{ top: 10, bottom: 10 }}>
           <Label angle={-90} dx={-20}>
             {yLabel}
           </Label>
@@ -69,7 +72,7 @@ function UnmemoizedScatter({
             lineHeight: '40px'
           }}
         />
-        <Scatter name={name} data={data} fill="#8884d8" />
+        <Scatter name={name} data={orderedData} fill="#8884d8" />
         <Tooltip />
       </ScatterRecharts>
     </ResponsiveContainer>

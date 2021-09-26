@@ -1,0 +1,18 @@
+.mainContent {
+  width: 20rem;
+  margin: 25vh auto;
+  align-items: stretch;
+}
+
+.mainContent > input {
+  margin-top: 0.5rem;
+  border: 1px solid #f0f0f0;
+}
+
+.mainContent > input + label {
+  margin-top: 1rem;
+}
+
+.mainContent > button {
+  align-self: center;
+}

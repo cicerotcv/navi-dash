@@ -5,6 +5,8 @@ import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
 import { useAuth } from '../../hooks/useAuth';
 
+import styles from './Home.module.css';
+
 interface IData {
   companyName?: string;
   email?: string;
@@ -26,6 +28,7 @@ export function Home() {
 
   function handleSubmit() {
     if (!!data.companyName && !!data.email) {
+      // TODO: email validation
       createAccount(data.companyName, data.email);
     }
   }
@@ -36,14 +39,8 @@ export function Home() {
 
   return (
     <Container>
-      <Section>
-        <input
-          type="text"
-          name="companyName"
-          placeholder="Company Name"
-          onChange={handleChange}
-          defaultValue={data.companyName}
-        />
+      <Section className={styles.mainContent}>
+        <label htmlFor="email">Email</label>
         <input
           type="text"
           name="email"
@@ -51,6 +48,16 @@ export function Home() {
           onChange={handleChange}
           defaultValue={data.email}
         />
+
+        <label htmlFor="companyName">Nome da empresa</label>
+        <input
+          type="text"
+          name="companyName"
+          placeholder="Company Name"
+          onChange={handleChange}
+          defaultValue={data.companyName}
+        />
+
         <br />
         <Button onClick={handleSubmit}>Submit</Button>
       </Section>
