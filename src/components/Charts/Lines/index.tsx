@@ -48,7 +48,6 @@ function UnmemoizedLines({
     return [Math.round(100 * min) / 100, Math.round(100 * max) / 100];
   }, [data]);
 
-  console.log(dataMin, dataMax);
   return (
     <ResponsiveContainer height={300}>
       <LineRecharts data={data} height={300} margin={{ bottom: 25 }}>
@@ -104,9 +103,3 @@ function UnmemoizedLines({
 }
 
 export const LinesChart = memo(UnmemoizedLines);
-
-function range(min: number, max: number, count: number) {
-  return Array.from(Array(count).keys()).map(
-    (number, index) => min + ((max - min) * index) / count
-  );
-}

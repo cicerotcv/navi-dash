@@ -72,7 +72,11 @@ function UnmemoizedScatter({
             lineHeight: '40px'
           }}
         />
-        <Scatter name={name} data={orderedData} fill="#8884d8" />
+        <Scatter
+          name={name}
+          data={orderedData}
+          fill="#8884d8"
+        />
         <Tooltip />
       </ScatterRecharts>
     </ResponsiveContainer>

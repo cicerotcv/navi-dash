@@ -12,22 +12,7 @@ import { BarChart } from '../../components/Charts/Bars';
 import { ScatterChart } from '../../components/Charts/Scatter';
 import { LinesChart } from '../../components/Charts/Lines';
 
-interface ISector {
-  id: string;
-  sector: string;
-}
-
 export function Dashboard() {
-  const [sector, setSector] = useState<ISector>();
-  const { getItem } = useLocalStorage();
-
-  useEffect(() => {
-    const storedSector = getItem('sector');
-    if (storedSector) {
-      setSector(storedSector);
-    }
-  }, []);
-
   const cost = useMemo(() => {
     return sectors_cost.map((item) => ({
       score: item.score,
@@ -130,7 +115,7 @@ export function Dashboard() {
       </div>
       <div className={styles.horizontalGroup}>
         <Section>
-          <h2>Scatter dos scores (e.vs esg)</h2>
+          <h2>Scatter dos scores (E. x ESG)</h2>
           <ScatterChart
             data={petrol_scores}
             name="Empresa do setor"
@@ -138,11 +123,10 @@ export function Dashboard() {
             keyY="score_esg"
             xLabel="Score (E)"
             yLabel="Score (ESG)"
-            keyZ="sector"
           />
         </Section>
         <Section>
-          <h2>Scatter dos scores (e.vs esg)</h2>
+          <h2>Scatter dos scores (E. x ESG)</h2>
           <p>
             Quem tem bom score também obviamente tem ótimo escore em todas as
             letras da sigla ESG, em especial a primeira, correto? Não se observa

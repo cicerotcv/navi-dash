@@ -41,6 +41,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.3.0",
-    "@types/recharts": "^1.8.20"
+    "@types/recharts": "^1.8.20",
+    "serve": "^12.0.1"
   }
 }

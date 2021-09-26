@@ -14,8 +14,8 @@ interface IData {
 
 export function Home() {
   const [data, setData] = useState<IData>({
-    companyName: 'Empresa teste',
-    email: 'teste@email.com'
+    companyName: 'Navi Tech Journey',
+    email: 'tech_journey@navi.com'
   });
   const { user, createAccount } = useAuth();
 
