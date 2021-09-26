@@ -10,6 +10,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   display: flex;
+  font-family: 'Lato';
+  overflow-x: hidden;
 }
 
 input,
@@ -20,4 +22,18 @@ select {
   color: #202020;
   background-color: #f6f6f6;
   font-weight: bold;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  position: fixed;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  border-radius: 4px;
 }

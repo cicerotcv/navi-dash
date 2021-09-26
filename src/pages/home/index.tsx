@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
@@ -44,7 +44,6 @@ export function Home() {
           onChange={handleChange}
           defaultValue={data.companyName}
         />
-        <br />
         <input
           type="text"
           name="email"
@@ -54,7 +53,6 @@ export function Home() {
         />
         <br />
         <Button onClick={handleSubmit}>Submit</Button>
-        <Link to="/dashboard">dashboard</Link>
       </Section>
     </Container>
   );

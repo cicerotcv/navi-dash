@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
 import sectors from '../../data/sectors.json';
+import sectors_cost from '../../data/score_cost.json';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import styles from './Dashboard.module.css';
+import { BarChart } from '../../components/Charts/Bars';
 
 interface ISector {
   id: string;
   sector: string;
 }
-// /setor
-// x: esg score
-// y: income
+
 export function Dashboard() {
   const [sector, setSector] = useState<ISector>();
   const { getItem, setItem } = useLocalStorage();
@@ -30,15 +30,23 @@ export function Dashboard() {
     setItem('sector', selectedSector!);
   }
 
+  const cost = useMemo(() => {
+    return sectors_cost.map((item) => ({
+      score: item.score,
+      cost: item.cost,
+      sector: sectors.find((sector) => sector.id === item.sector_id)!.sector!
+    }));
+  }, []);
+
   return (
-    <Container>
+    <Container className={styles.container}>
       <Section>
         <h1>Dashboard</h1>
         <div>Setor selecionado: {sector?.sector ?? 'Nenhum'}</div>
       </Section>
 
       <Section>
-        Selecione o setor:
+        <p>Selecione o setor:</p>
         <select
           defaultValue={sector?.sector ?? 'placeholder'}
           onChange={handleSelection}>
@@ -55,11 +63,12 @@ export function Dashboard() {
 
       <div className={styles.horizontalGroup}>
         <Section>
-          <h1>Gráficos</h1>
+          <h2>Cost per sector</h2>
+          <BarChart data={cost} keyX="sector" keyY="cost" />
         </Section>
-
         <Section>
-          <h1>Gráficos</h1>
+          <h2>Score per sector</h2>
+          <BarChart data={cost} keyX="sector" keyY="score" />
         </Section>
       </div>
     </Container>
