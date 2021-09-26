@@ -1,7 +1,7 @@
 .wrapper {
   background-color: white;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0 5px 15px #20202020;
   margin-top: 1rem;
 
@@ -12,4 +12,9 @@
 
 .wrapper > *:first-child {
   margin-bottom: 1rem;
+}
+
+.wrapper > ul > li {
+  list-style-type: none;
+  margin-left: 1rem;
 }

@@ -1,48 +1,65 @@
+import { memo } from 'react';
 import {
   BarChart as RechartsBarChart,
   Bar,
   Tooltip,
   CartesianGrid,
+  Label,
   XAxis,
   YAxis,
-  Legend
+  Legend,
+  ResponsiveContainer
 } from 'recharts';
+import { CustomAxisTick } from '../helpers';
 
 interface IBarChartsProps {
   data: {
     [key: string]: number | string;
   }[];
-  width?: number;
-  height?: number;
+  unit: string;
+  xLabel: string;
+  yLabel: string;
   keyX: string;
   keyY: string;
 }
 
-export function BarChart({
+function UnmemoizedBars({
   data,
-  width = 600,
-  height = 300,
+  unit,
+  xLabel,
+  yLabel,
   keyX,
   keyY
 }: IBarChartsProps) {
+  data = data.sort((a, b) => (a.sector > b.sector ? 1 : -1));
   return (
-    <RechartsBarChart width={width} height={height} data={data}>
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey={keyX} />
-      <YAxis dataKey={keyY} />{' '}
-      <Legend
-        width={100}
-        wrapperStyle={{
-          top: 16,
-          right: 16,
-          backgroundColor: '#f5f5f5',
-          border: '1px solid #d5d5d5',
-          borderRadius: 8,
-          lineHeight: '40px'
-        }}
-      />
-      <Bar dataKey={keyY} fill="#8884d8" />
-      <Tooltip />
-    </RechartsBarChart>
+    <ResponsiveContainer height={300}>
+      <RechartsBarChart data={data} barGap={1} margin={{ bottom: 15 }}>
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis dataKey={keyX} type="category">
+          <Label dy={15}>{xLabel}</Label>
+        </XAxis>
+        <YAxis dataKey={keyY} unit={unit} tick={CustomAxisTick} tickMargin={1}>
+          <Label angle={-90} dx={-15}>
+            {yLabel}
+          </Label>
+        </YAxis>
+        <Legend
+          width={100}
+          wrapperStyle={{
+            top: 16,
+            right: 16,
+            backgroundColor: '#f5f5f5',
+            border: '1px solid #d5d5d5',
+            borderRadius: 8,
+            lineHeight: '40px'
+          }}
+        />
+        <Bar dataKey={keyY} fill="#8884d8" />
+        <Tooltip />
+      </RechartsBarChart>
+    </ResponsiveContainer>
   );
 }
+
+export const BarChart = memo(UnmemoizedBars);
