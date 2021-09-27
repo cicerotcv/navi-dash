@@ -1,15 +1,14 @@
 import { memo, useMemo } from "react";
 import {
-  LineChart as LineRecharts,
-  Tooltip,
   CartesianGrid,
   Label,
-  XAxis,
-  YAxis,
   Legend,
   Line,
-  ZAxis,
-  ResponsiveContainer
+  LineChart as LineRecharts,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis
 } from "recharts";
 
 interface ILinesProps {

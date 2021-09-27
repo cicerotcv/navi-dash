@@ -4,7 +4,6 @@ import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { Section } from "../../components/Section";
 import { useAuth } from "../../hooks/useAuth";
-
 import styles from "./Home.module.css";
 
 interface IData {

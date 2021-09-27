@@ -1,14 +1,14 @@
 import { memo, useMemo } from "react";
 import {
-  BarChart as RechartsBarChart,
   Bar,
-  Tooltip,
+  BarChart as RechartsBarChart,
   CartesianGrid,
   Label,
-  XAxis,
-  YAxis,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis
 } from "recharts";
 import { CustomAxisTick } from "../helpers";
 

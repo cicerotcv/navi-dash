@@ -1,4 +1,4 @@
-import { Route, RouteProps, Redirect } from "react-router-dom";
+import { Redirect, Route, RouteProps } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 export function PrivateRoute({ component, ...props }: RouteProps) {

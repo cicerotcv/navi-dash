@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Container } from "../../components/Container";
 import { Section } from "../../components/Section";
 import sectors from "../../data/sectors.json";
 import sectors_cost from "../../data/score_cost.json";
 import financial from "../../data/financial.json";
 import petrol_scores from "../../data/petrol_scatter.json";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 import styles from "./Dashboard.module.css";
 import { BarChart } from "../../components/Charts/Bars";
@@ -46,15 +45,15 @@ export function Dashboard() {
           </p>
           <p>
             A externalidade se refere ao custo não internalizado por uma
-            terceira pessoa ou entidade. Quando uma fábrica polui um rio próximo
-            as suas instalações, ela não incorporou na sua decisão que os
-            pescadores poderão ter a quantidade de peixe reduzida, e, portanto,
-            menor renda para consumo dos produtos da mesma fábrica. No caso,
-            observa-se os custos (em $milhões) para cada setor econômico
-            brasileiro cadastrado pela <b>S&P Global</b>. O que se nota é que é
-            muito assimétrico o custo de dano entre os setores. Nessa
-            visualização, o setor petrolífero – a maior barra- é o que onera a
-            sociedade.
+            terceira pessoa ou entidade. Quando uma fábrica polui um rio situado
+            nas proximidades de suas instalações, ela não incorporou na sua
+            decisão que pescadores poderão ter a quantidade de peixe reduzida,
+            e, portanto, menor renda disponível para consumo dos produtos da
+            mesma fábrica. No caso, observa-se os custos (em milhões de dólares)
+            para cada setor econômico brasileiro cadastrado pela{" "}
+            <b>S&P Global</b>. O que se nota é que é muito assimétrico o custo
+            de dano entre os setores. Nessa visualização, o setor petrolífero -
+            a maior barra - é o que mais onera a sociedade.
           </p>
         </Section>
       </div>
@@ -74,13 +73,12 @@ export function Dashboard() {
         <Section>
           <h2>Score ESG S&P por setor</h2>
           <p>
-            Agora com as empresas adotando ESG, todas já atingiram os patamares
-            mais altos em escoragem? Não. Cada setor tem a sua natureza da
-            atividade e conjuntura econômica. Alguns setores buscaram adotar no
-            máximo possível as práticas, como o setor financeiro, outros
-            relativamente mais devagar. Logo, não é possível encontrar um padrão
-            entre setores, por isso a melhor forma de avaliar o risco ESG é
-            setor por setor.
+            Com as empresas adotando ESG, todas já atingiram os patamares mais
+            altos em escoragem? Não. Cada setor tem a sua natureza da atividade
+            e conjuntura econômica. Alguns setores, como o setor financeiro,
+            buscaram ao máximo adotar as práticas, outros relativamente mais
+            devagar. Logo, não é possível encontrar um padrão entre setores, por
+            isso a melhor forma de avaliar o risco ESG é setor por setor.
           </p>
         </Section>
       </div>
@@ -101,15 +99,15 @@ export function Dashboard() {
         <Section>
           <h2>Custo total por score</h2>
           <p>
-            A S&P Global desenvolveu uma metodologia de escoragem, considerando
-            diversos parâmetros nos três componentes do ESG: Environmental,
-            Social and Governance. Quanto maior o valor do score, mais conforme
-            as práticas ESG está determinado setor ou empresa. Dessa forma,
-            poder-se-ia pensar que os maiores score acarretariam em menores
-            custos totais de externalidade, contudo, a visualização apresenta
-            que essa relação não existe. Em parte justificada pois aquelas
-            empresas que mais oneram a sociedade, buscam alcançar os melhores
-            padrões em ESG.
+            A <b>S&P Global</b> desenvolveu uma metodologia de escoragem,
+            considerando diversos parâmetros nos três componentes do ESG:{" "}
+            <i>Environmental, Social and Governance</i>. Quanto maior o valor do{" "}
+            <i>score</i>, mais conforme as práticas ESG está determinado setor
+            ou empresa. Dessa forma, poder-se-ia pensar que os maiores{" "}
+            <i>score</i> acarretariam em menores custos totais de externalidade,
+            contudo, a visualização apresenta que essa relação não existe. Em
+            parte justificada pois aquelas empresas que mais oneram a sociedade,
+            buscam alcançar os melhores padrões em ESG.
           </p>
         </Section>
       </div>
@@ -128,13 +126,13 @@ export function Dashboard() {
         <Section>
           <h2>Scatter dos scores (E. x ESG)</h2>
           <p>
-            Quem tem bom score também obviamente tem ótimo escore em todas as
-            letras da sigla ESG, em especial a primeira, correto? Não se observa
-            isso no gráfico. Não há clara relação, uma vez que são três
-            categorias na siglas, que estas por sua vez se subdividem, há
-            setores que pela natureza de sua atividade não poderão passar de
-            certo limite no quesito ambiental, sendo traduzido em menor score
-            Enviroment.
+            Quem tem bom <i>score</i> também obviamente tem ótimo <i>score</i>{" "}
+            em todas as letras da sigla ESG, em especial a primeira, correto?
+            Não é o que se observa no gráfico. Não há clara relação, uma vez que
+            são três categorias na sigla, que estas por sua vez se subdividem,
+            há setores que pela natureza de sua atividade não poderão passar de
+            certo limite no quesito ambiental, sendo traduzido em menor{" "}
+            <i>score Enviroment</i>, por exemplo.
           </p>
         </Section>
       </div>
@@ -155,18 +153,20 @@ export function Dashboard() {
         <Section>
           <h2>Comparativo carteiras</h2>
           <p className={styles.subtitle}>
-            O índice de retorno no gráfico indica o retorno em forma para o IEE
-            B3 e a carteira selecionado. Portanto, um índice de 1.02 traduz um
-            retorno de 2% tendo como referência o início de período.
+            O índice de retorno no gráfico indica o retorno em forma de
+            rentabilidade para o <b>IEE B3</b> e a carteira selecionado.
+            Portanto, um índice de 1.02 traduz um retorno de 2% tendo como
+            referência o início de período.
           </p>
           <p>
-            O ESG ainda perturba suas noites de sono, elaborando scripts para
-            explicar que os menores retornos da empresa são decorrentes do custo
-            ESG? Mas isso não é precisa ser assim. É possível reduzir o risco
-            ESG, mantendo o retorno ou até superando-o. Nosso time pegou as dez
-            melhores empresas considerando o escore geral da S&P e comparou o
-            desempenho delas neste ano com o índice do setor elétrico (IEE B3).
-            Note que a carteira escolhida superou o índice.
+            O ESG ainda perturba suas noites de sono, elaborando <i>scripts</i>{" "}
+            para explicar que os menores retornos da empresa são decorrentes do
+            custo ESG? Isso não precisa ser assim. É possível reduzir o risco
+            ESG mantendo, ou até superando, o retorno. Nosso time pegou as dez
+            melhores empresas considerando o <i>score</i> geral da S&P e
+            comparou o desempenho delas neste ano (2021) com o índice do setor
+            elétrico (IEE B3). Observe no gráfico ao lado que a carteira
+            escolhida superou o índice.
           </p>
         </Section>
       </div>

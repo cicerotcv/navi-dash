@@ -1,15 +1,15 @@
 import { memo, useMemo } from "react";
 import {
-  ScatterChart as ScatterRecharts,
-  Tooltip,
   CartesianGrid,
   Label,
+  Legend,
+  ResponsiveContainer,
+  Scatter,
+  ScatterChart as ScatterRecharts,
+  Tooltip,
   XAxis,
   YAxis,
-  Legend,
-  Scatter,
-  ZAxis,
-  ResponsiveContainer
+  ZAxis
 } from "recharts";
 
 interface IScatterProps {
