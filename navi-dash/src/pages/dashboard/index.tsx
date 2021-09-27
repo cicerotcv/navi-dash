@@ -1,15 +1,15 @@
 import { useMemo } from "react";
+import { BarChart } from "../../components/Charts/Bars";
+import { LinesChart } from "../../components/Charts/Lines";
+import { ScatterChart } from "../../components/Charts/Scatter";
 import { Container } from "../../components/Container";
 import { Section } from "../../components/Section";
-import sectors from "../../data/sectors.json";
-import sectors_cost from "../../data/score_cost.json";
 import financial from "../../data/financial.json";
 import petrol_scores from "../../data/petrol_scatter.json";
-
+import sectors_cost from "../../data/score_cost.json";
+import sectors from "../../data/sectors.json";
 import styles from "./Dashboard.module.css";
-import { BarChart } from "../../components/Charts/Bars";
-import { ScatterChart } from "../../components/Charts/Scatter";
-import { LinesChart } from "../../components/Charts/Lines";
+
 
 export function Dashboard() {
   const cost = useMemo(() => {
@@ -33,7 +33,7 @@ export function Dashboard() {
             keyX="sector"
             keyY="cost"
             xLabel="Setor"
-            yLabel="Custo (milhões de dólares)"
+            yLabel="Custo (milhões de reais)"
             unit=" $M"
           />
         </Section>
@@ -49,7 +49,7 @@ export function Dashboard() {
             nas proximidades de suas instalações, ela não incorporou na sua
             decisão que pescadores poderão ter a quantidade de peixe reduzida,
             e, portanto, menor renda disponível para consumo dos produtos da
-            mesma fábrica. No caso, observa-se os custos (em milhões de dólares)
+            mesma fábrica. No caso, observa-se os custos (em milhões de reais)
             para cada setor econômico brasileiro cadastrado pela{" "}
             <b>S&P Global</b>. O que se nota é que é muito assimétrico o custo
             de dano entre os setores. Nessa visualização, o setor petrolífero -
