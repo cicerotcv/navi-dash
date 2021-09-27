@@ -18,7 +18,9 @@ Script que compara uma carteira de ativos selecionados (Setor Energético), cons
 
 Scripts de conversão de `json` para a importação direta no React de modo que poupasse processamento por parte do _client_.
 
-
 ---
 
 Informações relacionadas à execução do projeto React encontram-se na pasta `navi-dash/`.
+
+Uma versão hospedada do site está disponível em:\
+[`https://navi-tech-journey.web.app`](https://navi-tech-journey.web.app)
