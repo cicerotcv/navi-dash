@@ -10,7 +10,6 @@ import sectors_cost from "../../data/score_cost.json";
 import sectors from "../../data/sectors.json";
 import styles from "./Dashboard.module.css";
 
-
 export function Dashboard() {
   const cost = useMemo(() => {
     return sectors_cost.map((item) => ({
