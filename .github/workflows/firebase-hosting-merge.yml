@@ -14,6 +14,7 @@ jobs:
       - run: cd navi-dash && yarn install && npm build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entrypoint: /navi-dash
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NAVI_TECH_JOURNEY }}'
           channelId: live
